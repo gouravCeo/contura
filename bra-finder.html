@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find the Perfect Bra Style | Contoura</title>
+<meta name="description" content="Discover the best bra styles for your cup size and specific needs. Free personalized lingerie recommendations by Contoura.">
+<meta name="keywords" content="bra style finder, best bra for my shape, bra recommender, lingerie tools, women sizing tools, Contoura">
+<meta property="og:title" content="Find the Perfect Bra Style | Contoura">
+<meta property="og:description" content="Discover the best bra styles for your cup size and specific needs. Free personalized lingerie recommendations by Contoura.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contoura.online/bra-finder.html">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" style="text-decoration: none;">Contoura</a>
+  <div class="nav-scroll">
+    <a href="index.html" class="nav-btn" style="text-decoration:none;">Home</a>
+    <a href="weight-estimator.html" class="nav-btn" style="text-decoration:none;">Weight</a>
+    <a href="size-converter.html" class="nav-btn" style="text-decoration:none;">Convert</a>
+    <a href="bra-finder.html" class="nav-btn active" style="text-decoration:none;">Bra Finder</a>
+    <a href="swimsuit-finder.html" class="nav-btn" style="text-decoration:none;">Swimsuit</a>
+    <a href="blog/index.html" class="nav-btn" style="text-decoration:none;">Blog</a>
+  </div>
+</nav>
+
+<main>
+  <div class="tool-layout">
+    <div class="tool-sidebar">
+      <h1 class="tool-title">Bra Finder</h1>
+
+      <div class="field">
+        <p class="selector-label">Cup Size</p>
+        <div class="visual-grid cols-2" id="braSizeGrid">
+          <div class="vis-opt" data-val="small" onclick="pickOpt(this,'braSize')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M8 28 Q12 14 22 16 Q32 14 36 28" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M8 28 Q8 32 22 32 Q36 32 36 28" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+            </svg>
+            <span class="vis-opt-label">AA – A</span>
+          </div>
+          <div class="vis-opt selected" data-val="medium" onclick="pickOpt(this,'braSize')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M6 30 Q10 12 22 14 Q34 12 38 30" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M6 30 Q6 36 22 36 Q38 36 38 30" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+            </svg>
+            <span class="vis-opt-label">B – C</span>
+          </div>
+          <div class="vis-opt" data-val="large" onclick="pickOpt(this,'braSize')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M4 32 Q8 8 22 10 Q36 8 40 32" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M4 32 Q4 38 22 38 Q40 38 40 32" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+            </svg>
+            <span class="vis-opt-label">D – DD</span>
+          </div>
+          <div class="vis-opt" data-val="xlarge" onclick="pickOpt(this,'braSize')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M2 34 Q6 4 22 6 Q38 4 42 34" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M2 34 Q2 40 22 40 Q42 40 42 34" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+            </svg>
+            <span class="vis-opt-label">DDD+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <p class="selector-label">Primary Need</p>
+        <select id="bNeed">
+          <option value="everyday">Everyday comfort</option>
+          <option value="support">Maximum support</option>
+          <option value="push">Push-up / cleavage</option>
+          <option value="strapless">Strapless outfit</option>
+          <option value="sports">Sports / active</option>
+          <option value="sleep">Sleeping / lounge</option>
+          <option value="tshirt">Under tight clothes</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <p class="selector-label">Wire Preference</p>
+        <div class="visual-grid cols-3" id="braWireGrid">
+          <div class="vis-opt selected" data-val="underwire" onclick="pickOpt(this,'braWire')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M8 28 Q14 10 22 12 Q30 10 36 28" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M8 28 Q22 32 36 28" stroke="#C7604A" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="vis-opt-label">Underwire</span>
+          </div>
+          <div class="vis-opt" data-val="wirefree" onclick="pickOpt(this,'braWire')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M8 28 Q14 10 22 12 Q30 10 36 28" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M8 28 Q22 30 36 28" stroke="#1C1410" stroke-width="1" fill="none" stroke-dasharray="3 2"/>
+            </svg>
+            <span class="vis-opt-label">Wire-Free</span>
+          </div>
+          <div class="vis-opt" data-val="no_straps" onclick="pickOpt(this,'braWire')">
+            <svg viewBox="0 0 44 38" fill="none">
+              <path d="M8 22 Q14 8 22 10 Q30 8 36 22" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+              <path d="M8 22 Q8 30 22 30 Q36 30 36 22" stroke="#1C1410" stroke-width="1.4" fill="none"/>
+            </svg>
+            <span class="vis-opt-label">No Straps</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calcBra()">Find Style</button>
+    </div>
+
+    <div class="tool-main">
+      <div id="bResult" class="result-area">
+        <p class="selector-label" style="margin-bottom:16px">Recommended for you</p>
+        <div id="bCards"></div>
+      </div>
+      <div id="bEmpty" class="empty-state">Choose your preferences</div>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
