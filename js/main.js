@@ -432,9 +432,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector('.hamburger');
   const navScroll = document.querySelector('.nav-scroll');
   if (hamburger && navScroll) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
+    const backdrop = document.createElement('div');
+    backdrop.className = 'drawer-backdrop';
+    document.querySelector('nav').insertBefore(backdrop, document.querySelector('nav').firstChild);
+
+    function toggleDrawer() {
+      const isOpen = hamburger.classList.toggle('open');
       navScroll.classList.toggle('open');
-    });
+      backdrop.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleDrawer);
+    backdrop.addEventListener('click', toggleDrawer);
   }
 });
