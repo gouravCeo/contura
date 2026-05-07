@@ -38,10 +38,10 @@
   }
 
   .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+    font-family: 'Outfit', 'Jost', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--ink);
     white-space: nowrap;
     flex-shrink: 0;
@@ -57,6 +57,37 @@
     justify-content: flex-end;
   }
   .nav-scroll::-webkit-scrollbar { display: none; }
+
+  .drawer-title {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    margin-left: auto;
+  }
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
 
   .nav-btn {
     background: none;
@@ -83,14 +114,17 @@
   .home-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border-top: 1px solid var(--border);
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg);
     min-height: calc(100vh - 56px);
   }
 
   .home-tile {
     background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,11 +132,16 @@
     gap: 14px;
     padding: 40px 20px;
     cursor: pointer;
-    transition: background 0.25s;
+    transition: all 0.25s;
     position: relative;
     min-height: 200px;
   }
-  .home-tile:hover, .home-tile:active { background: var(--selected-bg); }
+  .home-tile:hover, .home-tile:active { 
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    background: var(--surface);
+    border-color: var(--accent);
+  }
   .home-tile svg { width: 80px; height: 64px; }
 
   .home-tile-label {
@@ -538,7 +577,7 @@
 
   /* RESPONSIVE – MOBILE */
   @media (max-width: 768px) {
-    .home-grid { grid-template-columns: 1fr 1fr; }
+    .home-grid { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
 
     .tool-layout {
       grid-template-columns: 1fr;
@@ -556,9 +595,36 @@
       padding: 20px 16px;
     }
 
-    nav { padding: 0 12px; }
-    .logo { font-size: 1.1rem; }
-    .nav-btn { font-size: 0.8rem; padding: 10px 12px; }
+    nav { padding: 0 16px; }
+    .logo { font-size: 1.8rem; }
+    
+    .hamburger { display: flex; position: relative; z-index: 102; }
+    .nav-scroll {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      bottom: 0;
+      width: 280px;
+      background: var(--surface);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 40px 0 20px 0;
+      box-shadow: -4px 0 15px rgba(0,0,0,0.08);
+      z-index: 101;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+    }
+    .nav-scroll.open {
+      right: 0;
+    }
+    .drawer-title {
+      display: block;
+      padding: 0 32px 24px 32px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-btn { font-size: 1.1rem; padding: 16px 32px; border-radius: 0; text-align: left; border-bottom: 1px solid var(--border); }
 
     .result-headline { font-size: 2.8rem; }
     .stat-row { grid-template-columns: repeat(2, 1fr); }
@@ -576,10 +642,10 @@
   }
 
   @media (max-width: 480px) {
-    .home-grid { grid-template-columns: 1fr 1fr; }
-    .home-tile { padding: 28px 12px; gap: 10px; min-height: 160px; }
+    .home-grid { grid-template-columns: 1fr; padding: 16px; gap: 12px; }
+    .home-tile { padding: 24px 16px; gap: 10px; min-height: 140px; }
     .home-tile svg { width: 60px; height: 48px; }
-    .home-tile-label { font-size: 1.1rem; }
+    .home-tile-label { font-size: 1.25rem; }
 
     .visual-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
     .vis-opt svg { width: 40px; height: 34px; }

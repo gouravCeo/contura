@@ -10,14 +10,20 @@
 <meta property="og:description" content="Convert your bra size across US, UK, EU, AU, FR, and JP sizing systems instantly. Find your perfect fit anywhere in the world with Contoura.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://contoura.online/size-converter.html">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="logo" style="text-decoration: none;">Contoura</a>
+  <button class="hamburger" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <div class="nav-scroll">
+    <span class="drawer-title logo">Contoura</span>
     <a href="index.html" class="nav-btn" style="text-decoration:none;">Home</a>
     <a href="weight-estimator.html" class="nav-btn" style="text-decoration:none;">Weight</a>
     <a href="size-converter.html" class="nav-btn active" style="text-decoration:none;">Convert</a>
@@ -44,51 +50,27 @@
           <p class="selector-label">Your Sizing System</p>
           <div class="visual-grid cols-3" id="sysGrid">
             <div class="vis-opt selected" data-sys="US" onclick="pickSys(this)">
-              <svg viewBox="0 0 44 38" fill="none">
-                <rect x="4" y="10" width="36" height="20" rx="3" stroke="#1C1410" stroke-width="1.4"/>
-                <line x1="4" y1="17" x2="40" y2="17" stroke="#1C1410" stroke-width="1"/>
-                <line x1="4" y1="23" x2="40" y2="23" stroke="#1C1410" stroke-width="1"/>
-                <line x1="18" y1="10" x2="18" y2="30" stroke="#1C1410" stroke-width="1"/>
-              </svg>
+              <span style="font-size: 28px; line-height: 1; margin: 4px 0;">🇺🇸</span>
               <span class="vis-opt-label">US</span>
             </div>
             <div class="vis-opt" data-sys="UK" onclick="pickSys(this)">
-              <svg viewBox="0 0 44 38" fill="none">
-                <rect x="4" y="10" width="36" height="20" rx="3" stroke="#1C1410" stroke-width="1.4"/>
-                <line x1="4" y1="20" x2="40" y2="20" stroke="#1C1410" stroke-width="1.4"/>
-                <line x1="22" y1="10" x2="22" y2="30" stroke="#1C1410" stroke-width="1.4"/>
-                <line x1="4" y1="10" x2="40" y2="30" stroke="#1C1410" stroke-width="0.8"/>
-                <line x1="40" y1="10" x2="4" y2="30" stroke="#1C1410" stroke-width="0.8"/>
-              </svg>
+              <span style="font-size: 28px; line-height: 1; margin: 4px 0;">🇬🇧</span>
               <span class="vis-opt-label">UK</span>
             </div>
             <div class="vis-opt" data-sys="EU" onclick="pickSys(this)">
-              <svg viewBox="0 0 44 38" fill="none">
-                <circle cx="22" cy="20" r="13" stroke="#1C1410" stroke-width="1.4"/>
-                <path d="M10 20 Q16 12 22 20 Q28 12 34 20" stroke="#1C1410" stroke-width="1" fill="none"/>
-              </svg>
+              <span style="font-size: 28px; line-height: 1; margin: 4px 0;">🇪🇺</span>
               <span class="vis-opt-label">EU</span>
             </div>
             <div class="vis-opt" data-sys="AU" onclick="pickSys(this)">
-              <svg viewBox="0 0 44 38" fill="none">
-                <ellipse cx="22" cy="22" rx="15" ry="10" stroke="#1C1410" stroke-width="1.4"/>
-                <path d="M14 14 Q18 8 22 12 Q26 8 30 14" stroke="#1C1410" stroke-width="1.2" fill="none"/>
-              </svg>
+              <span style="font-size: 28px; line-height: 1; margin: 4px 0;">🇦🇺</span>
               <span class="vis-opt-label">AU</span>
             </div>
             <div class="vis-opt" data-sys="FR" onclick="pickSys(this)">
-              <svg viewBox="0 0 44 38" fill="none">
-                <rect x="6"  y="8" width="10" height="24" rx="1" stroke="#1C1410" stroke-width="1.4"/>
-                <rect x="17" y="8" width="10" height="24" rx="1" stroke="#1C1410" stroke-width="1.4"/>
-                <rect x="28" y="8" width="10" height="24" rx="1" stroke="#1C1410" stroke-width="1.4"/>
-              </svg>
+              <span style="font-size: 28px; line-height: 1; margin: 4px 0;">🇫🇷</span>
               <span class="vis-opt-label">FR</span>
             </div>
             <div class="vis-opt" data-sys="JP" onclick="pickSys(this)">
-              <svg viewBox="0 0 44 38" fill="none">
-                <circle cx="22" cy="20" r="12" stroke="#1C1410" stroke-width="1.4"/>
-                <circle cx="22" cy="20" r="5" fill="#C7604A" opacity="0.7"/>
-              </svg>
+              <span style="font-size: 28px; line-height: 1; margin: 4px 0;">🇯🇵</span>
               <span class="vis-opt-label">JP</span>
             </div>
           </div>

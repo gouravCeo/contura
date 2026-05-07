@@ -427,4 +427,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById('ccFrom')) {
     liveConvert();
   }
+
+  // Hamburger Menu Logic
+  const hamburger = document.querySelector('.hamburger');
+  const navScroll = document.querySelector('.nav-scroll');
+  if (hamburger && navScroll) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navScroll.classList.toggle('open');
+    });
+  }
 });
