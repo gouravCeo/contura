@@ -2,9 +2,9 @@
     --bg: #F8F3EF;
     --surface: #FFFFFF;
     --ink: #1C1410;
-    --muted: #9A8A82;
-    --accent: #C7604A;
-    --accent2: #D4896E;
+    --muted: #60524C;     /* Darkened for better contrast (was #9A8A82) */
+    --accent: #A63A26;    /* Darkened for better contrast (was #C7604A) */
+    --accent2: #AA5A3E;   /* Darkened for better contrast (was #D4896E) */
     --border: rgba(28,20,16,0.1);
     --selected-bg: #FDF0EB;
     --stroke: #1C1410;
@@ -412,64 +412,104 @@
   .match-bar { height: 3px; background: var(--bg); border-radius: 2px; margin-top: 10px; overflow: hidden; }
   .match-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.8s ease; width: 0%; }
 
-  /* BRA IMAGE GRID */
+  /* AFFILIATE IMAGE GRID */
   .bra-images {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    gap: 12px;
     margin-top: 14px;
   }
-  .bra-img-wrap {
-    border-radius: 8px;
-    overflow: hidden;
-    aspect-ratio: 1;
-    background: var(--bg);
+  .affiliate-card {
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
     border: 1px solid var(--border);
+    background: var(--surface);
+    aspect-ratio: 1;
   }
-  .bra-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease, opacity 0.3s;
-  }
-  .bra-img-wrap:hover img { transform: scale(1.06); }
-  .bra-img-loading {
+  .affiliate-img-link {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: var(--muted);
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    background: var(--bg);
+    position: relative;
+    text-decoration: none;
+    padding: 12px;
+  }
+  .affiliate-img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    mix-blend-mode: darken;
+  }
+  .affiliate-card:hover .affiliate-img-link img {
+    transform: scale(1.05);
+  }
+  .affiliate-popup {
     position: absolute;
     inset: 0;
-    gap: 6px;
+    background: rgba(255, 255, 255, 0.96);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     text-align: center;
-    padding: 8px;
   }
-  .img-label {
-    font-size: 0.58rem;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 4px;
-    letter-spacing: 0.03em;
+  .affiliate-card:hover .affiliate-popup {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .affiliate-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
-  .img-section-label {
-    font-size: 0.62rem;
+  .affiliate-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-size: 0.65rem;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .affiliate-btn:hover {
+    background: var(--accent);
+    color: var(--surface);
+  }
+  
+  .placeholder-card {
+    background: var(--bg);
+    border: 1px dashed var(--border);
+  }
+  .placeholder-icon {
+    font-size: 1.8rem;
     color: var(--muted);
-    margin-bottom: 8px;
-    margin-top: 14px;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .placeholder-text {
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
   }
 
   @media (max-width: 480px) {

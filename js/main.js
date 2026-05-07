@@ -1,3 +1,78 @@
+// ─── AFFILIATE LINKS CONFIGURATION ────────────────────────
+// Add your affiliate products here to easily manage them across the site.
+// Match the key to the exact name of the product (e.g., "Balconette Bra", "Underwire Bikini").
+// You can add up to 4 products per style.
+const AFFILIATE_PRODUCTS = {
+  "Balconette Bra": [
+    { name: "Bralux Demi Cup Women's Non-Padded Non-Wired", url: "https://amzn.to/4uAqLNf", image: "https://m.media-amazon.com/images/I/61CJ1EeOMHL._SX679_.jpg" },
+    { name: "BEWILD Women Balconette Bra", url: "https://amzn.to/3RqbQqp", image: "https://m.media-amazon.com/images/I/61adCicFs+L._SY879_.jpg" },
+    { name: "Tweens - Heavily Padded Super Push-Up Bra - Balconette - Polyamide Fabric", url: "https://amzn.to/3OLimra", image: "https://m.media-amazon.com/images/I/51rlU49uW-L._SX679_.jpg" },
+    { name: "Clovia Powernet Solid Padded Full Cup Underwired Balconette Bra", url: "https://amzn.to/4f1MoS0", image: "https://m.media-amazon.com/images/I/61r6cr7RmYL._SY879_.jpg" }
+  ],
+  "T-Shirt Bra": [
+    { name: "Triumph T-Shirt Bra for Women Padded Non Wired Everyday Bra", url: "https://amzn.to/4nhDLVy", image: "https://m.media-amazon.com/images/I/61LPrNEj2nL._SY879_.jpg" }
+  ],
+  "Plunge Bra": [],
+  "Cotton Bralette": [],
+  "Seamless Wireless Bra": [],
+  "Wireless Bandeau": [],
+  "Full Cup Bra": [],
+  "Side-Support Balconette": [],
+  "Wire-Free Support Bra": [],
+  "Longline Strapless": [],
+  "Push-Up Bra": [
+    { name: "Brachy Women's Poly Cotton Padded Wired Push-Up Bra", url: "https://amzn.to/4tXa9zq", image: "https://m.media-amazon.com/images/I/61vrRT5pkCL._SX679_.jpg" },
+    { name: "Komli Cotton Maximiser Push-Up Bonded Bra", url: "https://amzn.to/4uvTORQ", image: "https://m.media-amazon.com/images/I/41APtnU1a3L.jpg" },
+    { name: "Brachy Women's Front Closure Multi-Way Padded Push-Up Bra", url: "https://amzn.to/42Oxw22", image: "https://m.media-amazon.com/images/I/41X5mnz6XtL.jpg" },
+    { name: "Tweens - Heavily Padded Super Push-Up Bra", url: "https://amzn.to/4f4IAzk", image: "https://m.media-amazon.com/images/I/51Cfpl2I7YL._SX679_.jpg" },
+  ],
+  "Demi Cup": [],
+  "Wireless Push-Up": [],
+  "Strapless Push-Up": [],
+  "Underwire Strapless Bra": [],
+  "Multi-Way Bra": [],
+  "Adhesive Bra / Pasties": [],
+  "Encapsulation Sports Bra": [],
+  "Compression Sports Bra": [],
+  "Sports Bandeau": [],
+  "Sleep Bra": [],
+  "Contour Bra": [],
+  "Seamless Wireless": [],
+  "Low-Back Converter": [],
+
+  // Swimwear
+  "Triangle Bikini": [],
+  "Bandeau Top": [],
+  "Halter Triangle": [],
+  "Underwire Bikini": [],
+  "Athletic One-Piece": [],
+  "Sports Bikini Top": [],
+  "Micro Bikini": [],
+  "Cut-Out Swimsuit": [],
+  "Balconette Bikini": [],
+  "Halter Bikini": [],
+  "Bandeau + Padding": [],
+  "Racerback One-Piece": [],
+  "Sports Bikini": [],
+  "Wrap Bikini Top": [],
+  "Plunge One-Piece": [],
+  "Underwire D+ Bikini": [],
+  "Structured One-Piece": [],
+  "Halter Tankini": [],
+  "Tie-Front Bikini": [],
+  "High-Impact Swimsuit": [],
+  "Racerback Tankini": [],
+  "Bustier Bikini": [],
+  "Wrap One-Piece": [],
+  "Underwire Swimdress": [],
+  "Structured Tankini": [],
+  "Halter Swimdress": [],
+  "High-Neck Bikini": [],
+  "Sports Tankini": [],
+  "Ruched One-Piece": [],
+  "Wrap Swimdress": []
+};
+
 // ─── SVG STRINGS ───────────────────────────────────────
 const svgSwim = {
   triangle: `<svg viewBox="0 0 100 80" fill="none"><path d="M50 18 L30 28 Q16 36 18 52 L34 52 Q36 38 50 38 Q64 38 66 52 L82 52 Q84 36 70 28 Z" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linejoin="round"/><path d="M50 18 L42 28 Q40 34 50 38 Q60 34 58 28 Z" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linejoin="round"/><path d="M50 18 Q44 10 36 8" stroke="#C7604A" stroke-width="1.5" stroke-linecap="round"/><path d="M50 18 Q56 10 64 8" stroke="#C7604A" stroke-width="1.5" stroke-linecap="round"/></svg>`,
@@ -77,7 +152,7 @@ function calcWeight() {
   if (lbs > 2.5) strain = "Moderate";
   if (lbs > 4.0) strain = "High";
   if (lbs > 5.5) strain = "Very High";
-  
+
   document.getElementById('wPerBreast').innerHTML = gPerBreast;
   document.getElementById('wTotal').innerHTML = totalG + ' g';
   document.getElementById('wLbs').innerHTML = lbs + ' lbs';
@@ -94,19 +169,19 @@ function calcWeight() {
 
 // ─── SIZE CONVERTER ───────────────────────────────────
 const sizeData = {
-  US: { cup: ['AA','A','B','C','D','DD','DDD/E','G','H','I','J','K','L'], step: 2, start: 30 },
-  UK: { cup: ['AA','A','B','C','D','DD','E','F','FF','G','GG','H','HH'], step: 2, start: 30 },
-  EU: { cup: ['AA','A','B','C','D','E','F','G','H','I','J','K','L'], step: 5, start: 65 },
-  AU: { cup: ['AA','A','B','C','D','DD','E','F','G','H','I','J','K'], step: 2, start: 8 },
-  FR: { cup: ['AA','A','B','C','D','E','F','G','H','I','J','K','L'], step: 5, start: 80 },
-  JP: { cup: ['A','B','C','D','E','F','G','H','I','J','K','L','M'], step: 5, start: 65 },
-  IT: { cup: ['A','B','C','D','E','F','G','H','I','J','K','L','M'], step: 5, start: 1, type: 'IT' },
-  IN: { cup: ['AA','A','B','C','D','DD','E','F','G','H','I','J','K'], step: 2, start: 30 },
-  CN: { cup: ['A','B','C','D','E','F','G','H','I','J','K','L','M'], step: 5, start: 70 },
-  KR: { cup: ['A','B','C','D','E','F','G','H','I','J','K','L','M'], step: 5, start: 70 },
-  BR: { cup: ['A','B','C','D','E','F','G','H','I','J','K','L','M'], step: 2, start: 38 },
-  MX: { cup: ['AA','A','B','C','D','DD','E','F','G','H','I','J','K'], step: 2, start: 30 },
-  RU: { cup: ['AA','A','B','C','D','E','F','G','H','I','J','K','L'], step: 5, start: 65 }
+  US: { cup: ['AA', 'A', 'B', 'C', 'D', 'DD', 'DDD/E', 'G', 'H', 'I', 'J', 'K', 'L'], step: 2, start: 30 },
+  UK: { cup: ['AA', 'A', 'B', 'C', 'D', 'DD', 'E', 'F', 'FF', 'G', 'GG', 'H', 'HH'], step: 2, start: 30 },
+  EU: { cup: ['AA', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'], step: 5, start: 65 },
+  AU: { cup: ['AA', 'A', 'B', 'C', 'D', 'DD', 'E', 'F', 'G', 'H', 'I', 'J', 'K'], step: 2, start: 8 },
+  FR: { cup: ['AA', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'], step: 5, start: 80 },
+  JP: { cup: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'], step: 5, start: 65 },
+  IT: { cup: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'], step: 5, start: 1, type: 'IT' },
+  IN: { cup: ['AA', 'A', 'B', 'C', 'D', 'DD', 'E', 'F', 'G', 'H', 'I', 'J', 'K'], step: 2, start: 30 },
+  CN: { cup: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'], step: 5, start: 70 },
+  KR: { cup: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'], step: 5, start: 70 },
+  BR: { cup: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'], step: 2, start: 38 },
+  MX: { cup: ['AA', 'A', 'B', 'C', 'D', 'DD', 'E', 'F', 'G', 'H', 'I', 'J', 'K'], step: 2, start: 30 },
+  RU: { cup: ['AA', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'], step: 5, start: 65 }
 };
 
 function getCupIndex(sys, cupStr) {
@@ -123,24 +198,24 @@ function calcConverter() {
   const fromSys = document.querySelector('#sysGrid .selected').dataset.sys;
   const bandVal = parseInt(document.getElementById('cBand').value);
   const cupVal = document.getElementById('cCup').value;
-  
+
   if (!bandVal || isNaN(bandVal)) return;
 
   const bandOffset = (bandVal - sizeData[fromSys].start) / sizeData[fromSys].step;
   const cupIdx = getCupIndex(fromSys, cupVal);
 
   let tbody = '';
-  ['US','UK','EU','AU','FR','JP'].forEach(sys => {
+  ['US', 'UK', 'EU', 'AU', 'FR', 'JP'].forEach(sys => {
     let toBand;
     if (sizeData[sys].type === 'IT') {
       toBand = sizeData[sys].start + Math.round(bandOffset);
-      const roman = ['I','II','III','IV','V','VI','VII','VIII','IX','X'];
-      toBand = roman[toBand-1] || toBand;
+      const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+      toBand = roman[toBand - 1] || toBand;
     } else {
       toBand = sizeData[sys].start + Math.round(bandOffset * sizeData[sys].step);
     }
-    const toCup = sizeData[sys].cup[cupIdx] || sizeData[sys].cup[sizeData[sys].cup.length-1];
-    
+    const toCup = sizeData[sys].cup[cupIdx] || sizeData[sys].cup[sizeData[sys].cup.length - 1];
+
     tbody += `<tr>
       <td><strong>${sys}</strong></td>
       <td>${toBand}</td>
@@ -168,12 +243,12 @@ function liveConvert() {
   let toBand;
   if (sizeData[toSys].type === 'IT') {
     let num = sizeData[toSys].start + Math.round(bandOffset);
-    const roman = ['I','II','III','IV','V','VI','VII','VIII','IX','X'];
-    toBand = roman[num-1] || num;
+    const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+    toBand = roman[num - 1] || num;
   } else {
     toBand = sizeData[toSys].start + Math.round(bandOffset * sizeData[toSys].step);
   }
-  const toCup = sizeData[toSys].cup[cupIdx] || sizeData[toSys].cup[sizeData[toSys].cup.length-1];
+  const toCup = sizeData[toSys].cup[cupIdx] || sizeData[toSys].cup[sizeData[toSys].cup.length - 1];
 
   const fullSz = toBand + toCup;
   document.getElementById('ccResultSize').innerHTML = fullSz;
@@ -185,18 +260,18 @@ function liveConvert() {
     let tB;
     if (sizeData[sys].type === 'IT') {
       let num = sizeData[sys].start + Math.round(bandOffset);
-      const roman = ['I','II','III','IV','V','VI','VII','VIII','IX','X'];
-      tB = roman[num-1] || num;
+      const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+      tB = roman[num - 1] || num;
     } else {
       tB = sizeData[sys].start + Math.round(bandOffset * sizeData[sys].step);
     }
-    const tC = sizeData[sys].cup[cupIdx] || sizeData[sys].cup[sizeData[sys].cup.length-1];
-    
+    const tC = sizeData[sys].cup[cupIdx] || sizeData[sys].cup[sizeData[sys].cup.length - 1];
+
     let isHighlight = sys === toSys ? 'background: #FAF5F0;' : '';
     let bold = sys === toSys ? 'font-weight:600;color:var(--accent)' : 'color:var(--accent)';
-    
-    const countryMap = { US:'🇺🇸 US', UK:'🇬🇧 UK', EU:'🇪🇺 EU', AU:'🇦🇺 AU', FR:'🇫🇷 FR', JP:'🇯🇵 JP', IT:'🇮🇹 IT', IN:'🇮🇳 IN', CN:'🇨🇳 CN', KR:'🇰🇷 KR', BR:'🇧🇷 BR', MX:'🇲🇽 MX', RU:'🇷🇺 RU' };
-    
+
+    const countryMap = { US: '🇺🇸 US', UK: '🇬🇧 UK', EU: '🇪🇺 EU', AU: '🇦🇺 AU', FR: '🇫🇷 FR', JP: '🇯🇵 JP', IT: '🇮🇹 IT', IN: '🇮🇳 IN', CN: '🇨🇳 CN', KR: '🇰🇷 KR', BR: '🇧🇷 BR', MX: '🇲🇽 MX', RU: '🇷🇺 RU' };
+
     tbody += `<tr style="${isHighlight}">
       <td><strong>${countryMap[sys]}</strong></td>
       <td>${tB}</td>
@@ -214,105 +289,120 @@ function liveConvert() {
 const braData = {
   everyday: {
     underwire: [
-      { svg:'balconette', name:'Balconette Bra', desc:'Lifts from the bottom for a natural, rounded shape. Wide straps prevent digging.', query:'balconette bra lingerie elegant underwire product photo' },
-      { svg:'tshirt', name:'T-Shirt Bra', desc:'Seamless moulded cups. Completely invisible under tight or light-colored clothing.', query:'seamless t-shirt bra invisible moulded cup underwire product photo' },
-      { svg:'plunge', name:'Plunge Bra', desc:'Deep center gore. Perfect for low-cut tops while maintaining strong support.', query:'plunge bra deep v low cut underwire product photo' },
+      { svg: 'balconette', name: 'Balconette Bra', desc: 'Lifts from the bottom for a natural, rounded shape. Wide straps prevent digging.', query: 'balconette bra lingerie elegant underwire product photo' },
+      { svg: 'tshirt', name: 'T-Shirt Bra', desc: 'Seamless moulded cups. Completely invisible under tight or light-colored clothing.', query: 'seamless t-shirt bra invisible moulded cup underwire product photo' },
+      { svg: 'plunge', name: 'Plunge Bra', desc: 'Deep center gore. Perfect for low-cut tops while maintaining strong support.', query: 'plunge bra deep v low cut underwire product photo' },
     ],
     wirefree: [
-      { svg:'bralette', name:'Cotton Bralette', desc:'Breathable cotton, wire-free. Comfortable for sleeping or all-day lounging.', query:'cotton bralette wireless breathable lounge sleep product photo' },
-      { svg:'tshirt', name:'Seamless Wireless Bra', desc:'No visible lines, wire-free with smooth rounded silhouette under T-shirts.', query:'seamless wireless bra smooth no lines under shirt product photo' },
+      { svg: 'bralette', name: 'Cotton Bralette', desc: 'Breathable cotton, wire-free. Comfortable for sleeping or all-day lounging.', query: 'cotton bralette wireless breathable lounge sleep product photo' },
+      { svg: 'tshirt', name: 'Seamless Wireless Bra', desc: 'No visible lines, wire-free with smooth rounded silhouette under T-shirts.', query: 'seamless wireless bra smooth no lines under shirt product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Wireless Bandeau', desc:'Stretchy tube-style for sleeping or lounging at home.', query:'wireless bandeau bra stretchy sleep lounge soft product photo' },
+      { svg: 'strapless', name: 'Wireless Bandeau', desc: 'Stretchy tube-style for sleeping or lounging at home.', query: 'wireless bandeau bra stretchy sleep lounge soft product photo' },
     ]
   },
   support: {
     underwire: [
-      { svg:'fullcup', name:'Full Cup Bra', desc:'Maximum coverage and support. Wide band and side panels smooth and lift.', query:'full cup bra full coverage support heavy bust product photo' },
-      { svg:'balconette', name:'Side-Support Balconette', desc:'Pushes breast tissue forward, creating a narrower silhouette.', query:'side support balconette bra lift product photo' },
+      { svg: 'fullcup', name: 'Full Cup Bra', desc: 'Maximum coverage and support. Wide band and side panels smooth and lift.', query: 'full cup bra full coverage support heavy bust product photo' },
+      { svg: 'balconette', name: 'Side-Support Balconette', desc: 'Pushes breast tissue forward, creating a narrower silhouette.', query: 'side support balconette bra lift product photo' },
     ],
     wirefree: [
-      { svg:'fullcup', name:'Wire-Free Support Bra', desc:'Wide straps and firm underband provide structural support without wires.', query:'wire free support bra full coverage firm band product photo' },
+      { svg: 'fullcup', name: 'Wire-Free Support Bra', desc: 'Wide straps and firm underband provide structural support without wires.', query: 'wire free support bra full coverage firm band product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Longline Strapless', desc:'Extended band down the torso for serious stay-up power.', query:'longline strapless bra bustier wedding product photo' },
+      { svg: 'strapless', name: 'Longline Strapless', desc: 'Extended band down the torso for serious stay-up power.', query: 'longline strapless bra bustier wedding product photo' },
     ]
   },
   push: {
     underwire: [
-      { svg:'pushup', name:'Push-Up Bra', desc:'Angled padding lifts up and inward for dramatic cleavage.', query:'push up bra cleavage padded lift underwire product photo' },
-      { svg:'demi', name:'Demi Cup', desc:'Half-coverage cup naturally pushes tissue upward. Great for square necklines.', query:'demi cup bra half coverage lift product photo' },
+      { svg: 'pushup', name: 'Push-Up Bra', desc: 'Angled padding lifts up and inward for dramatic cleavage.', query: 'push up bra cleavage padded lift underwire product photo' },
+      { svg: 'demi', name: 'Demi Cup', desc: 'Half-coverage cup naturally pushes tissue upward. Great for square necklines.', query: 'demi cup bra half coverage lift product photo' },
     ],
     wirefree: [
-      { svg:'pushup', name:'Wireless Push-Up', desc:'Moulded foam provides lift without the discomfort of a wire.', query:'wireless push up bra padded comfort lift product photo' },
+      { svg: 'pushup', name: 'Wireless Push-Up', desc: 'Moulded foam provides lift without the discomfort of a wire.', query: 'wireless push up bra padded comfort lift product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Strapless Push-Up', desc:'Silicone lining and bottom-heavy padding hold you up securely.', query:'strapless push up bra silicone grip padded product photo' },
+      { svg: 'strapless', name: 'Strapless Push-Up', desc: 'Silicone lining and bottom-heavy padding hold you up securely.', query: 'strapless push up bra silicone grip padded product photo' },
     ]
   },
   strapless: {
     underwire: [
-      { svg:'strapless', name:'Underwire Strapless Bra', desc:'Silicone grippers and firm underwire ensure it stays exactly in place.', query:'strapless bra underwire silicone grip smooth product photo' },
-      { svg:'strapless', name:'Multi-Way Bra', desc:'Comes with straps that can be worn halter, crossed, or removed entirely.', query:'multi way convertible bra strapless product photo' },
+      { svg: 'strapless', name: 'Underwire Strapless Bra', desc: 'Silicone grippers and firm underwire ensure it stays exactly in place.', query: 'strapless bra underwire silicone grip smooth product photo' },
+      { svg: 'strapless', name: 'Multi-Way Bra', desc: 'Comes with straps that can be worn halter, crossed, or removed entirely.', query: 'multi way convertible bra strapless product photo' },
     ],
     wirefree: [
-      { svg:'strapless', name:'Wireless Bandeau', desc:'Stretchy tube-style. Best for smaller cups under casual strapless tops.', query:'bandeau bra wireless strapless tube top product photo' },
+      { svg: 'strapless', name: 'Wireless Bandeau', desc: 'Stretchy tube-style. Best for smaller cups under casual strapless tops.', query: 'bandeau bra wireless strapless tube top product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Adhesive Bra / Pasties', desc:'Stick-on cups for completely backless or extremely plunging outfits.', query:'adhesive bra sticky backless silicone invisible product photo' },
+      { svg: 'strapless', name: 'Adhesive Bra / Pasties', desc: 'Stick-on cups for completely backless or extremely plunging outfits.', query: 'adhesive bra sticky backless silicone invisible product photo' },
     ]
   },
   sports: {
     underwire: [
-      { svg:'sports', name:'Encapsulation Sports Bra', desc:'Individual underwire cups support each breast separately. Zero uniboob.', query:'underwire sports bra high impact encapsulation product photo' },
+      { svg: 'sports', name: 'Encapsulation Sports Bra', desc: 'Individual underwire cups support each breast separately. Zero uniboob.', query: 'underwire sports bra high impact encapsulation product photo' },
     ],
     wirefree: [
-      { svg:'sports', name:'Compression Sports Bra', desc:'Pulls breasts tight against the chest to eliminate bounce.', query:'compression sports bra wireless workout product photo' },
+      { svg: 'sports', name: 'Compression Sports Bra', desc: 'Pulls breasts tight against the chest to eliminate bounce.', query: 'compression sports bra wireless workout product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Sports Bandeau', desc:'Tube-style sports band. Best for low-impact activities and smaller cups.', query:'sports bandeau bra tube workout strapless active product photo' },
+      { svg: 'strapless', name: 'Sports Bandeau', desc: 'Tube-style sports band. Best for low-impact activities and smaller cups.', query: 'sports bandeau bra tube workout strapless active product photo' },
     ]
   },
   sleep: {
     underwire: [],
     wirefree: [
-      { svg:'sleep', name:'Sleep Bra', desc:'Ultra-soft fabric, no hardware. Gentle support for sleeping and recovery.', query:'sleep bra soft wireless comfort maternity night product photo' },
-      { svg:'bralette', name:'Cotton Bralette', desc:'Breathable cotton, wire-free. Comfortable for sleeping or all-day lounging.', query:'cotton bralette wireless breathable lounge sleep product photo' },
+      { svg: 'sleep', name: 'Sleep Bra', desc: 'Ultra-soft fabric, no hardware. Gentle support for sleeping and recovery.', query: 'sleep bra soft wireless comfort maternity night product photo' },
+      { svg: 'bralette', name: 'Cotton Bralette', desc: 'Breathable cotton, wire-free. Comfortable for sleeping or all-day lounging.', query: 'cotton bralette wireless breathable lounge sleep product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Wireless Bandeau', desc:'Stretchy tube-style for sleeping or lounging at home.', query:'wireless bandeau bra stretchy sleep lounge soft product photo' },
+      { svg: 'strapless', name: 'Wireless Bandeau', desc: 'Stretchy tube-style for sleeping or lounging at home.', query: 'wireless bandeau bra stretchy sleep lounge soft product photo' },
     ]
   },
   tshirt: {
     underwire: [
-      { svg:'tshirt', name:'T-Shirt Bra', desc:'Seamless moulded cups. Completely invisible under tight or light-colored clothing.', query:'seamless t-shirt bra invisible moulded cup underwire product photo' },
-      { svg:'tshirt', name:'Contour Bra', desc:'Lightly padded moulded cup. No show-through under fitted tops.', query:'contour bra lightly padded smooth moulded cup no show product photo' },
+      { svg: 'tshirt', name: 'T-Shirt Bra', desc: 'Seamless moulded cups. Completely invisible under tight or light-colored clothing.', query: 'seamless t-shirt bra invisible moulded cup underwire product photo' },
+      { svg: 'tshirt', name: 'Contour Bra', desc: 'Lightly padded moulded cup. No show-through under fitted tops.', query: 'contour bra lightly padded smooth moulded cup no show product photo' },
     ],
     wirefree: [
-      { svg:'bralette', name:'Seamless Wireless', desc:'No visible lines, wire-free with smooth rounded silhouette under T-shirts.', query:'seamless wireless bra smooth no lines under shirt product photo' },
+      { svg: 'bralette', name: 'Seamless Wireless', desc: 'No visible lines, wire-free with smooth rounded silhouette under T-shirts.', query: 'seamless wireless bra smooth no lines under shirt product photo' },
     ],
     no_straps: [
-      { svg:'strapless', name:'Low-Back Converter', desc:'Works with low-back tops using a special strap attachment.', query:'low back bra converter clear strap backless product photo' },
+      { svg: 'strapless', name: 'Low-Back Converter', desc: 'Works with low-back tops using a special strap attachment.', query: 'low back bra converter clear strap backless product photo' },
     ]
   }
 };
 
 // ─── AFFILIATE IMAGE PLACEHOLDERS ───────────────────────
-function renderAffiliatePlaceholders(containerId, braName) {
+function renderAffiliatePlaceholders(containerId, itemName) {
   const wrap = document.getElementById(containerId);
   if (!wrap) return;
-  
-  // Render 4 placeholder slots for affiliate products
+
+  const products = AFFILIATE_PRODUCTS[itemName] || [];
+
   let html = '';
-  for(let i = 1; i <= 4; i++) {
-    html += `
-    <div>
-      <a href="#" class="bra-img-wrap" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-decoration:none; background:#F8F3EF; border:1px dashed var(--border);">
-        <span style="font-size:1.5rem; color:var(--muted); margin-bottom:4px; line-height:1;">+</span>
-        <span style="font-size:0.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; text-align:center;">Add Affiliate<br>Product</span>
-      </a>
-      <p class="img-label">Product ${i}</p>
-    </div>`;
+  // Render exactly 4 slots. If a product exists in config, show it. Otherwise show placeholder.
+  for (let i = 0; i < 4; i++) {
+    const p = products[i];
+    if (p) {
+      html += `
+      <div class="affiliate-card">
+        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="affiliate-img-link">
+          <img src="${p.image}" alt="${p.name}">
+          <div class="affiliate-popup">
+            <span class="affiliate-name">${p.name}</span>
+            <span class="affiliate-btn">Shop Now</span>
+          </div>
+        </a>
+      </div>`;
+    } else {
+      html += `
+      <div class="affiliate-card placeholder-card">
+        <a href="#" class="affiliate-img-link" onclick="event.preventDefault()">
+          <span class="placeholder-icon">+</span>
+          <span class="placeholder-text">Add Affiliate</span>
+        </a>
+      </div>`;
+    }
   }
   wrap.innerHTML = html;
 }
@@ -320,7 +410,7 @@ function renderAffiliatePlaceholders(containerId, braName) {
 async function calcBra() {
   const need = document.getElementById('bNeed').value;
   const opts = (braData[need] && braData[need][braWire]) || (braData[need] && braData[need]['underwire']) || [];
-  
+
   let html = '';
   opts.forEach((s, idx) => {
     html += `
@@ -340,7 +430,7 @@ async function calcBra() {
   });
 
   if (!html) html = '<div class="reco-card"><div style="color:var(--muted);font-size:0.82rem;padding:10px">Try a different wire preference for more results.</div></div>';
-  
+
   document.getElementById('bCards').innerHTML = html;
   document.getElementById('bEmpty').style.display = 'none';
   document.getElementById('bResult').classList.add('show');
@@ -354,44 +444,44 @@ async function calcBra() {
 // ─── SWIM DATA ────────────────────────────────────────
 const swimDataArr = {
   small: {
-    pool:   [{ svg:'triangle', name:'Triangle Bikini', match:95, desc:'Minimal fabric, string ties — perfect for smaller busts by the pool.' },
-             { svg:'bandeau',  name:'Bandeau Top',     match:88, desc:'Flattering and stylish. Great with high-waisted bottoms.' }],
-    beach:  [{ svg:'halter',   name:'Halter Triangle', match:90, desc:'Ties at neck for security in waves. Lightweight and secure.' },
-             { svg:'underwire_swim',name:'Underwire Bikini', match:75, desc:'Extra lift and shape. Great for looking put-together on the beach.' }],
-    active: [{ svg:'onepiece', name:'Athletic One-Piece', match:93, desc:'Streamlined for movement. Excellent support for active use.' },
-             { svg:'triangle', name:'Sports Bikini Top',  match:88, desc:'Racerback design and wide band keep you secure in water sports.' }],
-    fashion:[{ svg:'triangle', name:'Micro Bikini',    match:90, desc:'Bold, fashion-forward statement. Smaller cups carry off micro styles effortlessly.' },
-             { svg:'onepiece', name:'Cut-Out Swimsuit', match:85, desc:'Sculptural one-piece with strategic cut-outs.' }],
+    pool: [{ svg: 'triangle', name: 'Triangle Bikini', match: 95, desc: 'Minimal fabric, string ties — perfect for smaller busts by the pool.' },
+    { svg: 'bandeau', name: 'Bandeau Top', match: 88, desc: 'Flattering and stylish. Great with high-waisted bottoms.' }],
+    beach: [{ svg: 'halter', name: 'Halter Triangle', match: 90, desc: 'Ties at neck for security in waves. Lightweight and secure.' },
+    { svg: 'underwire_swim', name: 'Underwire Bikini', match: 75, desc: 'Extra lift and shape. Great for looking put-together on the beach.' }],
+    active: [{ svg: 'onepiece', name: 'Athletic One-Piece', match: 93, desc: 'Streamlined for movement. Excellent support for active use.' },
+    { svg: 'triangle', name: 'Sports Bikini Top', match: 88, desc: 'Racerback design and wide band keep you secure in water sports.' }],
+    fashion: [{ svg: 'triangle', name: 'Micro Bikini', match: 90, desc: 'Bold, fashion-forward statement. Smaller cups carry off micro styles effortlessly.' },
+    { svg: 'onepiece', name: 'Cut-Out Swimsuit', match: 85, desc: 'Sculptural one-piece with strategic cut-outs.' }],
   },
   medium: {
-    pool:   [{ svg:'underwire_swim', name:'Underwire Bikini',  match:94, desc:'Structured cups for beautiful shape and comfortable pool lounging.' },
-             { svg:'bandeau',        name:'Balconette Bikini', match:90, desc:'Wide-set straps, lower cut — lifts and creates great cleavage.' }],
-    beach:  [{ svg:'halter',         name:'Halter Bikini',     match:93, desc:'Tie-at-neck halter provides secure hold in waves with lovely lift.' },
-             { svg:'bandeau',        name:'Bandeau + Padding', match:85, desc:'Strapless with padding — shape and lift without straps.' }],
-    active: [{ svg:'onepiece',       name:'Racerback One-Piece', match:91, desc:'Secure, streamlined and supportive. Excellent for active water use.' },
-             { svg:'triangle',       name:'Sports Bikini',     match:87, desc:'Wide band and adjustable straps for all water sports.' }],
-    fashion:[{ svg:'wrap',           name:'Wrap Bikini Top',   match:92, desc:'Wrap style creates a gorgeous defined shape with a custom fit.' },
-             { svg:'onepiece',       name:'Plunge One-Piece',  match:88, desc:'Deep V with medium cup creates beautiful cleavage.' }],
+    pool: [{ svg: 'underwire_swim', name: 'Underwire Bikini', match: 94, desc: 'Structured cups for beautiful shape and comfortable pool lounging.' },
+    { svg: 'bandeau', name: 'Balconette Bikini', match: 90, desc: 'Wide-set straps, lower cut — lifts and creates great cleavage.' }],
+    beach: [{ svg: 'halter', name: 'Halter Bikini', match: 93, desc: 'Tie-at-neck halter provides secure hold in waves with lovely lift.' },
+    { svg: 'bandeau', name: 'Bandeau + Padding', match: 85, desc: 'Strapless with padding — shape and lift without straps.' }],
+    active: [{ svg: 'onepiece', name: 'Racerback One-Piece', match: 91, desc: 'Secure, streamlined and supportive. Excellent for active water use.' },
+    { svg: 'triangle', name: 'Sports Bikini', match: 87, desc: 'Wide band and adjustable straps for all water sports.' }],
+    fashion: [{ svg: 'wrap', name: 'Wrap Bikini Top', match: 92, desc: 'Wrap style creates a gorgeous defined shape with a custom fit.' },
+    { svg: 'onepiece', name: 'Plunge One-Piece', match: 88, desc: 'Deep V with medium cup creates beautiful cleavage.' }],
   },
   large: {
-    pool:   [{ svg:'underwire_swim', name:'Underwire D+ Bikini',   match:95, desc:'Designed for larger cups — structure, lift and full coverage.' },
-             { svg:'onepiece',       name:'Structured One-Piece',  match:90, desc:'Built-in bra with full coverage cups. Excellent support poolside.' }],
-    beach:  [{ svg:'tankini',        name:'Halter Tankini',        match:93, desc:'Extra neck and back support. Covers midriff with excellent bust support.' },
-             { svg:'wrap',           name:'Tie-Front Bikini',      match:88, desc:'Adjustable tie-front for customizable support. Secure in waves.' }],
-    active: [{ svg:'onepiece',       name:'High-Impact Swimsuit',  match:96, desc:'Built-in high-impact bra technology for active water sports.' },
-             { svg:'tankini',        name:'Racerback Tankini',     match:90, desc:'Racerback with built-in shelf bra. Excellent for swimming.' }],
-    fashion:[{ svg:'underwire_swim', name:'Bustier Bikini',        match:91, desc:'Structured bustier-style — incredibly flattering for larger cups.' },
-             { svg:'wrap',           name:'Wrap One-Piece',        match:87, desc:'Draped wrap creates a stunning silhouette.' }],
+    pool: [{ svg: 'underwire_swim', name: 'Underwire D+ Bikini', match: 95, desc: 'Designed for larger cups — structure, lift and full coverage.' },
+    { svg: 'onepiece', name: 'Structured One-Piece', match: 90, desc: 'Built-in bra with full coverage cups. Excellent support poolside.' }],
+    beach: [{ svg: 'tankini', name: 'Halter Tankini', match: 93, desc: 'Extra neck and back support. Covers midriff with excellent bust support.' },
+    { svg: 'wrap', name: 'Tie-Front Bikini', match: 88, desc: 'Adjustable tie-front for customizable support. Secure in waves.' }],
+    active: [{ svg: 'onepiece', name: 'High-Impact Swimsuit', match: 96, desc: 'Built-in high-impact bra technology for active water sports.' },
+    { svg: 'tankini', name: 'Racerback Tankini', match: 90, desc: 'Racerback with built-in shelf bra. Excellent for swimming.' }],
+    fashion: [{ svg: 'underwire_swim', name: 'Bustier Bikini', match: 91, desc: 'Structured bustier-style — incredibly flattering for larger cups.' },
+    { svg: 'wrap', name: 'Wrap One-Piece', match: 87, desc: 'Draped wrap creates a stunning silhouette.' }],
   },
   xlarge: {
-    pool:   [{ svg:'swimdress', name:'Underwire Swimdress',  match:94, desc:'Full support with dress overlay — stylish, comfortable, maximum coverage.' },
-             { svg:'tankini',   name:'Structured Tankini',   match:92, desc:'Built-in underwire bra in a tankini. Great coverage and bust support.' }],
-    beach:  [{ svg:'swimdress', name:'Halter Swimdress',     match:93, desc:'Halter ties distribute weight across neck and back comfortably.' },
-             { svg:'halter',    name:'High-Neck Bikini',     match:88, desc:'High neck provides extra support while looking stylish and modern.' }],
-    active: [{ svg:'onepiece',  name:'Racerback One-Piece',  match:95, desc:'Maximum support — the gold standard for active swim with larger busts.' },
-             { svg:'tankini',   name:'Sports Tankini',       match:91, desc:'High-impact split style for easy use while maintaining serious support.' }],
-    fashion:[{ svg:'onepiece',  name:'Ruched One-Piece',     match:90, desc:'Ruched fabric creates a sculpted silhouette with internal support.' },
-             { svg:'swimdress', name:'Wrap Swimdress',       match:87, desc:'Fashion-forward wrap style with built-in lining. Effortlessly chic.' }],
+    pool: [{ svg: 'swimdress', name: 'Underwire Swimdress', match: 94, desc: 'Full support with dress overlay — stylish, comfortable, maximum coverage.' },
+    { svg: 'tankini', name: 'Structured Tankini', match: 92, desc: 'Built-in underwire bra in a tankini. Great coverage and bust support.' }],
+    beach: [{ svg: 'swimdress', name: 'Halter Swimdress', match: 93, desc: 'Halter ties distribute weight across neck and back comfortably.' },
+    { svg: 'halter', name: 'High-Neck Bikini', match: 88, desc: 'High neck provides extra support while looking stylish and modern.' }],
+    active: [{ svg: 'onepiece', name: 'Racerback One-Piece', match: 95, desc: 'Maximum support — the gold standard for active swim with larger busts.' },
+    { svg: 'tankini', name: 'Sports Tankini', match: 91, desc: 'High-impact split style for easy use while maintaining serious support.' }],
+    fashion: [{ svg: 'onepiece', name: 'Ruched One-Piece', match: 90, desc: 'Ruched fabric creates a sculpted silhouette with internal support.' },
+    { svg: 'swimdress', name: 'Wrap Swimdress', match: 87, desc: 'Fashion-forward wrap style with built-in lining. Effortlessly chic.' }],
   }
 };
 
@@ -409,6 +499,8 @@ function calcSwim() {
           <div class="match-bar"><div class="match-fill" id="sf-${i}"></div></div>
         </div>
       </div>
+      <p class="img-section-label">Suggested Styles</p>
+      <div class="bra-images" id="swimimg-${i}"></div>
     </div>`;
   });
   document.getElementById('sCards').innerHTML = html;
@@ -420,6 +512,11 @@ function calcSwim() {
       if (el) el.style.width = s.match + '%';
     });
   }, 60);
+
+  // Render affiliate placeholders
+  results.forEach((s, i) => {
+    renderAffiliatePlaceholders(`swimimg-${i}`, s.name);
+  });
 }
 
 // Init
