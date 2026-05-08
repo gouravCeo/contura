@@ -718,3 +718,352 @@
 
     .bra-images { grid-template-columns: repeat(2, 1fr); }
   }
+
+  /* ─── BREADCRUMB ───────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+.breadcrumb span:last-child {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ─── RELATED TOOLS SIDEBAR ────────────────────────── */
+.related-tools {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.related-link {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+.related-link:hover {
+  color: var(--accent2);
+}
+
+/* ─── SIZE RESULT CARDS ────────────────────────────── */
+.size-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.size-result-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 12px;
+  text-align: center;
+}
+.size-flag {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+.size-result-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.size-result-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── SISTER SIZES ─────────────────────────────────── */
+.sister-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.sister-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.sister-size {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.sister-label {
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ─── NEXT STEPS ───────────────────────────────────── */
+.next-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.next-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+.next-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.next-icon {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.next-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 2px;
+}
+.next-desc {
+  font-size: 0.62rem;
+  color: var(--muted);
+}
+
+/* ─── MEASURE GUIDE ────────────────────────────────── */
+.measure-guide {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.measure-guide svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+/* ─── T-SHIRT RESULT ───────────────────────────────── */
+.tshirt-result {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.tshirt-size-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.tshirt-size-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.size-breakdown {
+  margin-bottom: 20px;
+}
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.breakdown-label {
+  color: var(--muted);
+}
+.breakdown-value {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ─── BIKINI RESULT ────────────────────────────────── */
+.bikini-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.bikini-result-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 12px;
+  text-align: center;
+}
+.bikini-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+.bikini-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.bikini-size {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.bikini-sub {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.style-recommendation {
+  margin-bottom: 20px;
+}
+.style-chip {
+  display: inline-block;
+  background: var(--selected-bg);
+  color: var(--accent);
+  font-size: 0.72rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 4px 4px 0 0;
+  font-weight: 500;
+}
+
+/* ─── AUTHOR PROFILE ───────────────────────────────── */
+.author-profile {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+.author-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.author-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.author-role {
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.author-bio {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+.author-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.author-stat {
+  text-align: center;
+}
+.author-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--ink);
+  display: block;
+  line-height: 1;
+}
+.author-stat-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.author-articles-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.author-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.author-link:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+
+/* ─── INPUT HINTS ──────────────────────────────────── */
+.input-hint {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ─── SIZE CHART REF ───────────────────────────────── */
+.size-chart-ref {
+  margin: 20px 0;
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .size-result-grid { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .bikini-result-grid { grid-template-columns: 1fr; }
+  .sister-grid { grid-template-columns: 1fr; }
+}

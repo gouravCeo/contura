@@ -241,6 +241,7 @@
   height: 180px;
   background: var(--bg);
   object-fit: cover;
+  border-bottom: 1px solid var(--border);
 }
 .blog-content {
   padding: 20px;

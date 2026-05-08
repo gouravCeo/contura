@@ -10,13 +10,34 @@
 <meta property="og:description" content="Discover your true bra size, estimate breast weight, find the perfect swimsuit, and convert sizes globally with Contoura's free interactive tools for women.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://contoura.online/">
+<meta property="og:image" content="https://contoura.online/screen.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Contoura",
+  "url": "https://contoura.online/",
+  "description": "Free interactive tools for bra sizing, breast weight estimation, swimsuit fitting, and global size conversion.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Contoura",
+    "logo": {"@type": "ImageObject", "url": "https://contoura.online/screen.png"}
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://contoura.online/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="logo" style="text-decoration: none;">Contoura</a>
+  <a href="/" class="logo" style="text-decoration: none;">Contoura</a>
   <button class="hamburger" aria-label="Toggle navigation">
     <span></span>
     <span></span>
@@ -24,19 +45,40 @@
   </button>
   <div class="nav-scroll">
     <span class="drawer-title logo">Contoura</span>
-    <a href="index.html" class="nav-btn active" style="text-decoration:none;">Home</a>
+    <a href="/" class="nav-btn" style="text-decoration:none;">Home</a>
     <a href="weight-estimator.html" class="nav-btn" style="text-decoration:none;">Weight</a>
     <a href="size-converter.html" class="nav-btn" style="text-decoration:none;">Convert</a>
+    <a href="tools/bra-size-calculator.html" class="nav-btn" style="text-decoration:none;">Calculator</a>
     <a href="bra-finder.html" class="nav-btn" style="text-decoration:none;">Bra Finder</a>
     <a href="swimsuit-finder.html" class="nav-btn" style="text-decoration:none;">Swimsuit</a>
+    <a href="tools/tshirt-size-from-bra.html" class="nav-btn" style="text-decoration:none;">T-Shirt</a>
+    <a href="tools/bikini-size-from-bra.html" class="nav-btn" style="text-decoration:none;">Bikini</a>
     <a href="blog/index.html" class="nav-btn" style="text-decoration:none;">Blog</a>
   </div>
 </nav>
 
 <main>
   <div class="home-grid">
+    <a href="tools/bra-size-calculator.html" class="home-tile" style="text-decoration: none;">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="Measuring tape icon">
+        <circle cx="50" cy="40" r="28" stroke="#1C1410" stroke-width="1.5" fill="none"/>
+        <path d="M50 12 L50 20" stroke="#1C1410" stroke-width="1.5"/>
+        <path d="M50 60 L50 68" stroke="#1C1410" stroke-width="1.5"/>
+        <path d="M22 40 L30 40" stroke="#1C1410" stroke-width="1.5"/>
+        <path d="M70 40 L78 40" stroke="#1C1410" stroke-width="1.5"/>
+        <path d="M32 22 L38 28" stroke="#C7604A" stroke-width="1.5"/>
+        <path d="M62 52 L68 58" stroke="#C7604A" stroke-width="1.5"/>
+        <text x="50" y="44" text-anchor="middle" font-size="14" fill="#1C1410" font-family="Jost">in</text>
+      </svg>
+      <span class="home-tile-label">Bra Size Calculator</span>
+      <span class="home-tile-sub">Measure & calculate</span>
+      <div class="tile-arrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </a>
+
     <a href="weight-estimator.html" class="home-tile" style="text-decoration: none;">
-      <svg viewBox="0 0 100 80" fill="none">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="Weight scale icon">
         <ellipse cx="50" cy="58" rx="30" ry="6" stroke="#1C1410" stroke-width="1.5"/>
         <path d="M20 58 Q25 20 50 18 Q75 20 80 58" stroke="#1C1410" stroke-width="1.5" fill="none"/>
         <line x1="50" y1="18" x2="50" y2="10" stroke="#1C1410" stroke-width="1.5"/>
@@ -51,7 +93,7 @@
     </a>
 
     <a href="size-converter.html" class="home-tile" style="text-decoration: none;">
-      <svg viewBox="0 0 100 80" fill="none">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="Size conversion arrows icon">
         <circle cx="38" cy="40" r="20" stroke="#1C1410" stroke-width="1.5"/>
         <ellipse cx="38" cy="40" rx="9" ry="20" stroke="#1C1410" stroke-width="1.5"/>
         <line x1="18" y1="40" x2="58" y2="40" stroke="#1C1410" stroke-width="1.5"/>
@@ -68,7 +110,7 @@
     </a>
 
     <a href="bra-finder.html" class="home-tile" style="text-decoration: none;">
-      <svg viewBox="0 0 100 80" fill="none">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="Bra style icon">
         <path d="M18 42 Q24 22 38 26 Q46 28 50 36 Q54 28 62 26 Q76 22 82 42" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         <path d="M18 42 Q18 48 22 50 Q28 52 38 48 Q44 45 50 42 Q56 45 62 48 Q72 52 78 50 Q82 48 82 42" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         <path d="M22 36 Q16 28 14 20" stroke="#1C1410" stroke-width="1.5" stroke-linecap="round"/>
@@ -77,14 +119,14 @@
         <circle cx="86" cy="19" r="2.5" stroke="#C7604A" stroke-width="1.5"/>
       </svg>
       <span class="home-tile-label">Bra Style Finder</span>
-      <span class="home-tile-sub">Match by shape &amp; need</span>
+      <span class="home-tile-sub">Match by shape & need</span>
       <div class="tile-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
     </a>
 
     <a href="swimsuit-finder.html" class="home-tile" style="text-decoration: none;">
-      <svg viewBox="0 0 100 80" fill="none">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="Swimsuit icon">
         <path d="M50 18 L30 28 Q16 36 18 52 L34 52 Q36 38 50 38 Q64 38 66 52 L82 52 Q84 36 70 28 Z" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
         <path d="M50 18 L42 28 Q40 34 50 38 Q60 34 58 28 Z" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
         <path d="M50 18 Q44 10 36 8" stroke="#C7604A" stroke-width="1.5" stroke-linecap="round"/>
@@ -92,6 +134,34 @@
       </svg>
       <span class="home-tile-label">Swimsuit Finder</span>
       <span class="home-tile-sub">Fit for your shape</span>
+      <div class="tile-arrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </a>
+
+    <a href="tools/tshirt-size-from-bra.html" class="home-tile" style="text-decoration: none;">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="T-shirt icon">
+        <path d="M30 20 L20 30 L26 36 L34 28 L34 70 L66 70 L66 28 L74 36 L80 30 L70 20 Q50 28 30 20Z" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M38 40 L62 40" stroke="#C7604A" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M38 48 L58 48" stroke="#C7604A" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="home-tile-label">T-Shirt Size</span>
+      <span class="home-tile-sub">From your bra size</span>
+      <div class="tile-arrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </a>
+
+    <a href="tools/bikini-size-from-bra.html" class="home-tile" style="text-decoration: none;">
+      <svg viewBox="0 0 100 80" fill="none" aria-label="Bikini icon">
+        <path d="M25 25 Q35 35 45 25" stroke="#1C1410" stroke-width="1.5" fill="none"/>
+        <path d="M55 25 Q65 35 75 25" stroke="#1C1410" stroke-width="1.5" fill="none"/>
+        <path d="M20 55 Q35 45 50 55 Q65 45 80 55" stroke="#1C1410" stroke-width="1.5" fill="none"/>
+        <circle cx="30" cy="20" r="3" stroke="#C7604A" stroke-width="1.5"/>
+        <circle cx="70" cy="20" r="3" stroke="#C7604A" stroke-width="1.5"/>
+      </svg>
+      <span class="home-tile-label">Bikini Size</span>
+      <span class="home-tile-sub">Top & bottom finder</span>
       <div class="tile-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>

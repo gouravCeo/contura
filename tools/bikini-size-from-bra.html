@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bikini Size from Bra Size | Contoura</title>
+<meta name="description" content="Convert your bra size to the perfect bikini size. Get top and bottom recommendations based on your actual bra measurements.">
+<meta name="keywords" content="bikini size from bra, bra to bikini size, swimsuit size converter, bikini fit guide, Contoura">
+<meta property="og:title" content="Bikini Size from Bra Size | Contoura">
+<meta property="og:description" content="Convert your bra size to the perfect bikini size. Get top and bottom recommendations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contoura.online/tools/bikini-size-from-bra.html">
+<meta property="og:image" content="https://contoura.online/screen.png">
+<link rel="canonical" href="https://contoura.online/tools/bikini-size-from-bra.html">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bikini Size from Bra Size",
+  "description": "Convert your bra size to the perfect bikini top and bottom size.",
+  "url": "https://contoura.online/tools/bikini-size-from-bra.html",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://contoura.online/"},
+      {"@type": "ListItem", "position": 2, "name": "Bikini Size Converter", "item": "https://contoura.online/tools/bikini-size-from-bra.html"}
+    ]
+  },
+  "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "Contoura Bikini Size Converter",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo" style="text-decoration: none;">Contoura</a>
+  <button class="hamburger" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-scroll">
+    <span class="drawer-title logo">Contoura</span>
+    <a href="/" class="nav-btn" style="text-decoration:none;">Home</a>
+    <a href="../weight-estimator.html" class="nav-btn" style="text-decoration:none;">Weight</a>
+    <a href="../size-converter.html" class="nav-btn" style="text-decoration:none;">Convert</a>
+    <a href="bra-size-calculator.html" class="nav-btn" style="text-decoration:none;">Calculator</a>
+    <a href="../bra-finder.html" class="nav-btn" style="text-decoration:none;">Bra Finder</a>
+    <a href="../swimsuit-finder.html" class="nav-btn" style="text-decoration:none;">Swimsuit</a>
+    <a href="tshirt-size-from-bra.html" class="nav-btn" style="text-decoration:none;">T-Shirt</a>
+    <a href="bikini-size-from-bra.html" class="nav-btn" style="text-decoration:none;">Bikini</a>
+    <a href="../blog/index.html" class="nav-btn" style="text-decoration:none;">Blog</a>
+  </div>
+</nav>
+
+<main>
+  <div class="tool-layout">
+    <div class="tool-sidebar">
+      <h1 class="tool-title">Bikini Size Finder</h1>
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <span>Bikini Size</span>
+      </nav>
+
+      <div class="field two-col">
+        <div>
+          <p class="selector-label">Band Size</p>
+          <select id="bkBand" onchange="calcBikini()">
+            <option>28</option><option>30</option><option>32</option><option selected>34</option>
+            <option>36</option><option>38</option><option>40</option><option>42</option>
+            <option>44</option><option>46</option><option>48</option>
+          </select>
+        </div>
+        <div>
+          <p class="selector-label">Cup Size</p>
+          <select id="bkCup" onchange="calcBikini()">
+            <option>AA</option><option>A</option><option selected>B</option><option>C</option>
+            <option>D</option><option>DD/E</option><option>DDD/F</option><option>G</option>
+            <option>H</option><option>I</option><option>J</option><option>K</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <p class="selector-label">Hip Size (Optional)</p>
+        <select id="bkHip" onchange="calcBikini()">
+          <option value="same">Same as band</option>
+          <option value="smaller">1-2 sizes smaller</option>
+          <option value="larger">1-2 sizes larger</option>
+        </select>
+      </div>
+
+      <div class="related-tools">
+        <p class="selector-label">Related Tools</p>
+        <a href="../swimsuit-finder.html" class="related-link">Swimsuit Style Finder →</a>
+        <a href="../size-converter.html" class="related-link">Size Converter →</a>
+        <a href="tshirt-size-from-bra.html" class="related-link">T-Shirt Size Finder →</a>
+      </div>
+    </div>
+
+    <div class="tool-main">
+      <div id="bkResult" class="result-area">
+        <p class="selector-label" style="margin-bottom:16px">Your bikini size</p>
+        
+        <div class="bikini-result-grid">
+          <div class="bikini-result-card top">
+            <div class="bikini-icon">👙</div>
+            <div class="bikini-label">Bikini Top</div>
+            <div class="bikini-size" id="bikiniTop">M</div>
+            <div class="bikini-sub" id="topStyle">Triangle recommended</div>
+          </div>
+          <div class="bikini-result-card bottom">
+            <div class="bikini-icon">🩱</div>
+            <div class="bikini-label">Bikini Bottom</div>
+            <div class="bikini-size" id="bikiniBottom">M</div>
+            <div class="bikini-sub" id="bottomStyle">Classic cut</div>
+          </div>
+        </div>
+
+        <div class="style-recommendation">
+          <p class="selector-label">Recommended Top Styles</p>
+          <div id="topStyles"></div>
+        </div>
+
+        <div class="tip-box" id="bkTip"></div>
+
+        <div class="next-steps" style="margin-top:24px">
+          <p class="selector-label">Find the perfect style</p>
+          <a href="../swimsuit-finder.html" class="btn-calc" style="display:inline-block;text-align:center;text-decoration:none;">Go to Swimsuit Finder</a>
+        </div>
+      </div>
+      <div id="bkEmpty" class="empty-state">Select your bra size above</div>
+    </div>
+  </div>
+</main>
+
+<script src="../js/main.js"></script>
+<script>
+function calcBikini() {
+  const band = parseInt(document.getElementById('bkBand').value);
+  const cup = document.getElementById('bkCup').value;
+  const hipPref = document.getElementById('bkHip').value;
+  
+  const cupInches = { AA: 0, A: 1, B: 2, C: 3, D: 4, 'DD/E': 5, 'DDD/F': 6, G: 7, H: 8, I: 9, J: 10, K: 11 };
+  const cupAdd = cupInches[cup] || 2;
+  
+  // Top size logic
+  let topSize = 'M';
+  const bust = band + cupAdd;
+  if (bust <= 32) topSize = 'XS';
+  else if (bust <= 34) topSize = 'S';
+  else if (bust <= 36) topSize = 'M';
+  else if (bust <= 39) topSize = 'L';
+  else if (bust <= 42) topSize = 'XL';
+  else if (bust <= 45) topSize = '2XL';
+  else topSize = '3XL';
+  
+  // Bottom size logic
+  let bottomSize = topSize;
+  if (hipPref === 'smaller') {
+    const sizes = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'];
+    const idx = sizes.indexOf(topSize);
+    bottomSize = idx > 0 ? sizes[idx - 1] : 'XS';
+  } else if (hipPref === 'larger') {
+    const sizes = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'];
+    const idx = sizes.indexOf(topSize);
+    bottomSize = idx < sizes.length - 1 ? sizes[idx + 1] : '3XL';
+  }
+  
+  // Top style recommendations
+  let styles = [];
+  let topStyleText = '';
+  if (cupAdd <= 2) {
+    styles = ['Triangle', 'Bandeau', 'Halter'];
+    topStyleText = 'Triangle or Bandeau';
+  } else if (cupAdd <= 5) {
+    styles = ['Underwire Bikini', 'Halter', 'Balconette'];
+    topStyleText = 'Underwire or Halter';
+  } else {
+    styles = ['Underwire D+', 'Halter Tankini', 'Structured One-Piece'];
+    topStyleText = 'Underwire D+ or Tankini';
+  }
+  
+  // Bottom style
+  let bottomText = 'Classic brief or hipster';
+  if (band >= 40) bottomText = 'High-waisted for support';
+  else if (band <= 32) bottomText = 'Cheeky or string bikini';
+  
+  document.getElementById('bikiniTop').textContent = topSize;
+  document.getElementById('bikiniBottom').textContent = bottomSize;
+  document.getElementById('topStyle').textContent = topStyleText + ' recommended';
+  document.getElementById('bottomStyle').textContent = bottomText;
+  
+  document.getElementById('topStyles').innerHTML = styles.map(s => `
+    <div class="style-chip">${s}</div>
+  `).join('');
+  
+  let tip = '';
+  if (cupAdd >= 7) tip = 'For larger cup sizes, bikini tops with underwire and wide bands provide the best support. Avoid string ties that dig into your neck.';
+  else if (cupAdd <= 1) tip = 'Smaller busts have the most flexibility. Triangle tops, bandeaus, and bralettes all work beautifully.';
+  else tip = 'Your size is well-supported by most bikini styles. Consider the activity—halters for active beach days, bandeaus for lounging.';
+  
+  if (hipPref !== 'same') {
+    tip += ' Since your hips run ' + (hipPref === 'smaller' ? 'smaller' : 'larger') + ' than your bust, consider mix-and-match sizing for the best fit.';
+  }
+  
+  document.getElementById('bkTip').innerHTML = `<strong>Tip:</strong> ${tip}`;
+  
+  document.getElementById('bkEmpty').style.display = 'none';
+  document.getElementById('bkResult').classList.add('show');
+}
+
+calcBikini();
+</script>
+</body>
+</html>

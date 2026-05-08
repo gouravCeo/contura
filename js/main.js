@@ -380,31 +380,28 @@ function renderAffiliatePlaceholders(containerId, itemName) {
   const products = AFFILIATE_PRODUCTS[itemName] || [];
 
   let html = '';
-  // Render exactly 4 slots. If a product exists in config, show it. Otherwise show placeholder.
-  for (let i = 0; i < 4; i++) {
-    const p = products[i];
-    if (p) {
-      html += `
-      <div class="affiliate-card">
-        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="affiliate-img-link">
-          <img src="${p.image}" alt="${p.name}">
-          <div class="affiliate-popup">
-            <span class="affiliate-name">${p.name}</span>
-            <span class="affiliate-btn">Shop Now</span>
-          </div>
-        </a>
-      </div>`;
-    } else {
-      html += `
-      <div class="affiliate-card placeholder-card">
-        <a href="#" class="affiliate-img-link" onclick="event.preventDefault()">
-          <span class="placeholder-icon">+</span>
-          <span class="placeholder-text">Add Affiliate</span>
-        </a>
-      </div>`;
-    }
+  // Only render if products exist. No ugly placeholders.
+  if (products.length === 0) {
+    wrap.style.display = 'none';
+    return;
   }
+  
+  // Render up to 4 products, but only actual products
+  const displayProducts = products.slice(0, 4);
+  displayProducts.forEach(p => {
+    html += `
+    <div class="affiliate-card">
+      <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="affiliate-img-link">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <div class="affiliate-popup">
+          <span class="affiliate-name">${p.name}</span>
+          <span class="affiliate-btn">Shop Now</span>
+        </div>
+      </a>
+    </div>`;
+  });
   wrap.innerHTML = html;
+  wrap.style.display = 'grid';
 }
 
 async function calcBra() {

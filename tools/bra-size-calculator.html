@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bra Size Calculator | Measure & Find Your Perfect Fit | Contoura</title>
+<meta name="description" content="Calculate your exact bra size in seconds. Enter your underbust and bust measurements to get your US, UK, and EU bra size with sister sizes.">
+<meta name="keywords" content="bra size calculator, measure bra size, bra fitting tool, cup size calculator, sister sizes, Contoura">
+<meta property="og:title" content="Bra Size Calculator | Measure & Find Your Perfect Fit | Contoura">
+<meta property="og:description" content="Calculate your exact bra size in seconds. Enter your underbust and bust measurements to get your US, UK, and EU bra size with sister sizes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contoura.online/tools/bra-size-calculator.html">
+<meta property="og:image" content="https://contoura.online/screen.png">
+<link rel="canonical" href="https://contoura.online/tools/bra-size-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bra Size Calculator",
+  "description": "Calculate your exact bra size in seconds with our interactive measuring tool.",
+  "url": "https://contoura.online/tools/bra-size-calculator.html",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://contoura.online/"},
+      {"@type": "ListItem", "position": 2, "name": "Bra Size Calculator", "item": "https://contoura.online/tools/bra-size-calculator.html"}
+    ]
+  },
+  "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "Contoura Bra Size Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo" style="text-decoration: none;">Contoura</a>
+  <button class="hamburger" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-scroll">
+    <span class="drawer-title logo">Contoura</span>
+    <a href="/" class="nav-btn" style="text-decoration:none;">Home</a>
+    <a href="../weight-estimator.html" class="nav-btn" style="text-decoration:none;">Weight</a>
+    <a href="../size-converter.html" class="nav-btn" style="text-decoration:none;">Convert</a>
+    <a href="bra-size-calculator.html" class="nav-btn" style="text-decoration:none;">Calculator</a>
+    <a href="../bra-finder.html" class="nav-btn" style="text-decoration:none;">Bra Finder</a>
+    <a href="../swimsuit-finder.html" class="nav-btn" style="text-decoration:none;">Swimsuit</a>
+    <a href="tshirt-size-from-bra.html" class="nav-btn" style="text-decoration:none;">T-Shirt</a>
+    <a href="bikini-size-from-bra.html" class="nav-btn" style="text-decoration:none;">Bikini</a>
+    <a href="../blog/index.html" class="nav-btn" style="text-decoration:none;">Blog</a>
+  </div>
+</nav>
+
+<main>
+  <div class="tool-layout">
+    <div class="tool-sidebar">
+      <h1 class="tool-title">Bra Size Calculator</h1>
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <span>Bra Size Calculator</span>
+      </nav>
+
+      <div class="field">
+        <p class="selector-label">Measurement Unit</p>
+        <div class="visual-grid cols-2" id="unitGrid">
+          <div class="vis-opt selected" data-val="inches" onclick="pickUnit(this)">
+            <span style="font-size:1.2rem;font-weight:500">in</span>
+            <span class="vis-opt-label">Inches</span>
+          </div>
+          <div class="vis-opt" data-val="cm" onclick="pickUnit(this)">
+            <span style="font-size:1.2rem;font-weight:500">cm</span>
+            <span class="vis-opt-label">Centimeters</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field two-col">
+        <div>
+          <p class="selector-label">Underbust</p>
+          <input type="number" id="underbust" placeholder="32" step="0.5" min="20" max="150" oninput="calcBraSize()">
+          <span class="input-hint" id="underbustHint">Measure snugly under your bust</span>
+        </div>
+        <div>
+          <p class="selector-label">Bust</p>
+          <input type="number" id="bust" placeholder="36" step="0.5" min="20" max="200" oninput="calcBraSize()">
+          <span class="input-hint" id="bustHint">Measure fullest part of bust</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <p class="selector-label">Measuring Guide</p>
+        <div class="measure-guide">
+          <svg viewBox="0 0 100 80" fill="none" aria-label="Diagram showing underbust and bust measurement locations">
+            <path d="M30 20 Q50 15 70 20" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+            <path d="M25 35 Q50 30 75 35" stroke="#C7604A" stroke-width="2" fill="none"/>
+            <path d="M20 50 Q50 45 80 50" stroke="#1C1410" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+            <text x="50" y="18" text-anchor="middle" font-size="6" fill="#60524C">Underbust</text>
+            <text x="50" y="33" text-anchor="middle" font-size="6" fill="#A63A26" font-weight="500">Bust</text>
+            <text x="50" y="48" text-anchor="middle" font-size="6" fill="#60524C">Underbust (cm)</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="related-tools">
+        <p class="selector-label">Related Tools</p>
+        <a href="../size-converter.html" class="related-link">Size Converter →</a>
+        <a href="../bra-finder.html" class="related-link">Bra Style Finder →</a>
+        <a href="../weight-estimator.html" class="related-link">Weight Estimator →</a>
+      </div>
+    </div>
+
+    <div class="tool-main">
+      <div id="bsResult" class="result-area">
+        <p class="selector-label" style="margin-bottom:16px">Your calculated size</p>
+        
+        <div class="size-result-grid">
+          <div class="size-result-card">
+            <span class="size-flag">🇺🇸</span>
+            <div class="size-result-big" id="usSize">—</div>
+            <div class="size-result-label">US Size</div>
+          </div>
+          <div class="size-result-card">
+            <span class="size-flag">🇬🇧</span>
+            <div class="size-result-big" id="ukSize">—</div>
+            <div class="size-result-label">UK Size</div>
+          </div>
+          <div class="size-result-card">
+            <span class="size-flag">🇪🇺</span>
+            <div class="size-result-big" id="euSize">—</div>
+            <div class="size-result-label">EU Size</div>
+          </div>
+        </div>
+
+        <div class="sister-sizes" id="sisterSizes" style="display:none">
+          <p class="selector-label" style="margin-top:24px">Sister Sizes (Same Cup Volume)</p>
+          <div class="sister-grid" id="sisterGrid"></div>
+        </div>
+
+        <div class="tip-box" id="bsTip" style="margin-top:20px"></div>
+
+        <div class="next-steps" style="margin-top:24px">
+          <p class="selector-label">What to do next?</p>
+          <div class="next-grid">
+            <a href="../size-converter.html" class="next-card">
+              <span class="next-icon">🌍</span>
+              <span class="next-title">Convert Globally</span>
+              <span class="next-desc">See your size in 13 countries</span>
+            </a>
+            <a href="../bra-finder.html" class="next-card">
+              <span class="next-icon">✨</span>
+              <span class="next-title">Find Your Style</span>
+              <span class="next-desc">Get bra recommendations</span>
+            </a>
+            <a href="../weight-estimator.html" class="next-card">
+              <span class="next-icon">⚖️</span>
+              <span class="next-title">Estimate Weight</span>
+              <span class="next-desc">Calculate breast weight</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="bsEmpty" class="empty-state">Enter your measurements above</div>
+    </div>
+  </div>
+</main>
+
+<script src="../js/main.js"></script>
+<script>
+let calcUnit = 'inches';
+
+function pickUnit(el) {
+  document.querySelectorAll('#unitGrid .vis-opt').forEach(n => n.classList.remove('selected'));
+  el.classList.add('selected');
+  calcUnit = el.dataset.val;
+  const hint = calcUnit === 'cm' ? 'Measure in centimeters' : 'Measure in inches';
+  document.getElementById('underbustHint').textContent = hint;
+  document.getElementById('bustHint').textContent = hint;
+  calcBraSize();
+}
+
+function calcBraSize() {
+  let underbust = parseFloat(document.getElementById('underbust').value);
+  let bust = parseFloat(document.getElementById('bust').value);
+  
+  if (!underbust || !bust || isNaN(underbust) || isNaN(bust)) {
+    document.getElementById('bsEmpty').style.display = 'flex';
+    document.getElementById('bsResult').classList.remove('show');
+    return;
+  }
+
+  // Convert cm to inches if needed
+  if (calcUnit === 'cm') {
+    underbust = underbust / 2.54;
+    bust = bust / 2.54;
+  }
+
+  // Calculate band size
+  let band = Math.round(underbust);
+  if (band % 2 !== 0) band += 1; // Round to nearest even number
+  
+  // Calculate cup size
+  const diff = bust - underbust;
+  const cupMap = ['AA', 'A', 'B', 'C', 'D', 'DD/E', 'DDD/F', 'G', 'H', 'I', 'J', 'K'];
+  let cupIndex = Math.round(diff);
+  if (cupIndex < 0) cupIndex = 0;
+  if (cupIndex >= cupMap.length) cupIndex = cupMap.length - 1;
+  const cup = cupMap[cupIndex];
+
+  // US Size
+  const usSize = band + cup;
+  document.getElementById('usSize').textContent = usSize;
+
+  // UK Size
+  const ukCupMap = ['AA', 'A', 'B', 'C', 'D', 'DD', 'E', 'F', 'FF', 'G', 'GG', 'H'];
+  const ukCup = ukCupMap[cupIndex] || cup;
+  document.getElementById('ukSize').textContent = band + ukCup;
+
+  // EU Size
+  const euBand = Math.round((band + 4) * 2.54 / 5) * 5; // Approximate conversion
+  const euCupMap = ['AA', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
+  document.getElementById('euSize').textContent = euBand + (euCupMap[cupIndex] || cup);
+
+  // Sister sizes
+  const sisterSizes = [];
+  if (band >= 30) sisterSizes.push({ band: band - 2, cup: cupMap[cupIndex + 1] || cup, label: 'Tighter Band' });
+  if (band <= 44) sisterSizes.push({ band: band + 2, cup: cupMap[cupIndex - 1] || cup, label: 'Looser Band' });
+  
+  if (sisterSizes.length > 0) {
+    document.getElementById('sisterSizes').style.display = 'block';
+    document.getElementById('sisterGrid').innerHTML = sisterSizes.map(s => `
+      <div class="sister-card">
+        <div class="sister-size">${s.band}${s.cup}</div>
+        <div class="sister-label">${s.label}</div>
+      </div>
+    `).join('');
+  }
+
+  // Tips
+  let tip = '';
+  if (diff < 1) tip = 'Your bust and underbust measurements are very close. You may need a bralette or sports bra rather than a structured cup bra.';
+  else if (diff > 9) tip = 'You have a significant difference between bust and underbust. Look for bras with strong side support and wide straps.';
+  else tip = 'This is a common size range. Most brands should stock your size. Use our Size Converter to shop internationally.';
+  
+  document.getElementById('bsTip').innerHTML = `<strong>Tip:</strong> ${tip}`;
+
+  document.getElementById('bsEmpty').style.display = 'none';
+  document.getElementById('bsResult').classList.add('show');
+}
+</script>
+</body>
+</html>
