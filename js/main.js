@@ -8,7 +8,8 @@ const AFFILIATE_PRODUCTS = {
     { name: "Clovia Women's Lace Solid Padded Full Cup Wire Free Bralette Bra - Black", url: "https://amzn.to/4ux5WCg", image: "https://m.media-amazon.com/images/I/61yZuifLPDL._SL1500_.jpg" },
     { name: "BEWILD Women Balconette Bra", url: "https://amzn.to/3RqbQqp", image: "https://m.media-amazon.com/images/I/61adCicFs+L._SY879_.jpg" },
     { name: "Tweens - Heavily Padded Super Push-Up Bra - Balconette - Polyamide Fabric", url: "https://amzn.to/3OLimra", image: "https://m.media-amazon.com/images/I/51rlU49uW-L._SX679_.jpg" },
-    { name: "Clovia Powernet Solid Padded Full Cup Underwired Balconette Bra", url: "https://amzn.to/4f1MoS0", image: "https://m.media-amazon.com/images/I/61r6cr7RmYL._SY879_.jpg" }
+    { name: "Clovia Powernet Solid Padded Full Cup Underwired Balconette Bra", url: "https://amzn.to/4f1MoS0", image: "https://m.media-amazon.com/images/I/61r6cr7RmYL._SY879_.jpg" },
+    { name: "Clovia Women's Lace Solid Padded Full Cup Wire Free Bralette Bra - Black", url: "https://amzn.to/4ux5WCg", image: "https://m.media-amazon.com/images/I/placeholder.jpg" },
   ],
   "T-Shirt Bra": [
     { name: "Triumph T-Shirt Bra for Women Padded Non Wired Everyday Bra", url: "https://amzn.to/4nhDLVy", image: "https://m.media-amazon.com/images/I/61LPrNEj2nL._SY879_.jpg" },
@@ -64,7 +65,6 @@ const AFFILIATE_PRODUCTS = {
   "Contour Bra": [],
   "Seamless Wireless": [],
   "Low-Back Converter": [],
-
   // Swimwear
   "Triangle Bikini": [],
   "Bandeau Top": [],
